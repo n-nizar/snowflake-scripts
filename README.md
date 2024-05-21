@@ -4,22 +4,15 @@ Welcome to the **snowflake-scripts** repository. This private repository is desi
 
 ## Repository Structure
 
-The repository is organized into various categories to help you quickly find the scripts you need. Below is an overview of the folder structure and their contents:
+The repository is organized into different categories to help you easily locate and manage your Snowflake scripts:
 
-- **DDL_Scripts**: Scripts for Data Definition Language operations such as creating, altering, and dropping tables.
-- **DML_Scripts**: Scripts for Data Manipulation Language operations including INSERT, UPDATE, DELETE, and MERGE.
-- **ETL_Processes**: Scripts for ETL (Extract, Transform, Load) processes to load data into Snowflake.
-- **Queries**: Various SQL queries used for data retrieval and analysis.
-- **User_Management**: Scripts for managing users, roles, and permissions.
-- **Stored_Procedures**: Scripts for stored procedures written in Snowflake's procedural SQL.
-- **Functions**: User-defined functions and scalar functions.
-- **Views**: Scripts to create and manage views.
-- **Performance_Tuning**: Scripts and commands for optimizing performance.
-- **Security**: Scripts related to security features, including masking policies and data encryption.
-- **Utilities**: Miscellaneous utility scripts that don't fit into other categories.
-- **Backup_and_Restore**: Scripts for backing up and restoring data.
-- **Integration**: Scripts for integrating Snowflake with other tools or platforms.
-- **Documentation**: Documentation related to the scripts and their usage.
+1. **Data_Ingestion**: Scripts related to loading data into Snowflake from various sources.
+2. **Data_Transformation**: Scripts for transforming data within Snowflake, such as ETL processes.
+3. **Data_Modeling**: Scripts related to creating and managing Snowflake database schemas, tables, and views.
+4. **Query_Optimization**: Scripts for optimizing SQL queries within Snowflake.
+5. **Monitoring_and_Maintenance**: Scripts for monitoring Snowflake usage, performance tuning, and maintenance tasks.
+6. **Security_and_Access Control**: Scripts related to managing user access, roles, and security configurations in Snowflake.
+7. **Utilities_and_Helpers**: Miscellaneous scripts that provide utility functions or help with common tasks.
 
 ## Getting Started
 
@@ -43,7 +36,7 @@ The repository is organized into various categories to help you quickly find the
 Here’s a basic example of how to run a script from the `DDL_Scripts` folder:
 
 1. Open your SQL editor.
-2. Navigate to `DDL_Scripts/create_tables.sql`.
+2. Navigate to `Data_Modeling/create_tables.sql`.
 3. Copy the script content.
 4. Paste it into your SQL editor and execute.
 
