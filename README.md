@@ -32,11 +32,11 @@ The repository is organized into different categories to help you easily locate 
     cd snowflake-scripts
     ```
 2. **Navigate to the Desired Folder**: Browse through the folders to find the script you need.
-3. **Run the Script**: Copy the script content and run it in your SQL editor or via SnowSQL.
+3. **Run the Script**: Copy the script content and run it in a worksheet in Snowsight.
 
 ### Example
 
-Here’s a basic example of how to run a script from the `DDL_Scripts` folder:
+Here’s a basic example of how to run a script from the `Data_Ingestion` folder:
 
 1. Open your SQL editor.
 2. Navigate to `Data_Ingestion/snowpipe_continuous_ingestion.sql`.
