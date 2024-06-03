@@ -21,8 +21,8 @@ The repository is organized into different categories to help you easily locate 
 
 ### Prerequisites
 
-- **Snowflake Account**: You need access to a Snowflake account to run these scripts.
-- **SnowSQL**: Snowflake's command-line tool, if you prefer running scripts from the command line.
+- **Snowflake Account**: Access to a Snowflake account to run these scripts.
+- **SnowSQL**: Snowflake's command-line tool, for those who prefer running scripts from the command line. It also facilitates loading data from a local machine into Snowflake.
 
 ### How to Use
 
