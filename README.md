@@ -4,7 +4,7 @@ Welcome to the **snowflake-scripts** repository. This private repository is desi
 
 ## Repository Structure
 
-The repository is organized into different categories to help you easily locate and manage your Snowflake scripts:
+The repository is organized into different categories to help easily locate and manage Snowflake scripts:
 
 1. **Data_Ingestion**: Scripts related to loading data into Snowflake from various sources.
 2. **Data_Transformation**: Scripts for transforming data within Snowflake, such as ETL processes.
