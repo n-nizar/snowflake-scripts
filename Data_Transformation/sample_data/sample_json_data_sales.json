@@ -1,0 +1,734 @@
+{
+    "customers": [
+        {
+            "customer_id": 1,
+            "name": "John Doe",
+            "email": "johndoe@example.com",
+            "phone": "555-1234",
+            "address": {
+                "street": "123 Elm St",
+                "city": "Springfield",
+                "state": "IL",
+                "zip_code": "62701"
+            },
+            "created_at": "2023-01-15T14:32:00Z"
+        },
+        {
+            "customer_id": 2,
+            "name": "Jane Smith",
+            "email": "janesmith@example.com",
+            "phone": "555-5678",
+            "address": {
+                "street": "456 Oak St",
+                "city": "Greenville",
+                "state": "TX",
+                "zip_code": "75401"
+            },
+            "created_at": "2023-03-22T09:15:00Z"
+        },
+        {
+            "customer_id": 3,
+            "name": "Alice Johnson",
+            "email": "alicej@example.com",
+            "phone": "555-9012",
+            "address": {
+                "street": "789 Maple St",
+                "city": "Springfield",
+                "state": "IL",
+                "zip_code": "62702"
+            },
+            "created_at": "2023-02-10T08:30:00Z"
+        },
+        {
+            "customer_id": 4,
+            "name": "Bob Brown",
+            "email": "bobb@example.com",
+            "phone": "555-3456",
+            "address": {
+                "street": "321 Pine St",
+                "city": "Fairfield",
+                "state": "CA",
+                "zip_code": "94533"
+            },
+            "created_at": "2023-04-18T12:00:00Z"
+        },
+        {
+            "customer_id": 5,
+            "name": "Charlie Black",
+            "email": "charlieb@example.com",
+            "phone": "555-7890",
+            "address": {
+                "street": "654 Cedar St",
+                "city": "Shelbyville",
+                "state": "IN",
+                "zip_code": "46176"
+            },
+            "created_at": "2023-05-05T14:45:00Z"
+        },
+        {
+            "customer_id": 6,
+            "name": "David White",
+            "email": "davidw@example.com",
+            "phone": "555-2345",
+            "address": {
+                "street": "987 Birch St",
+                "city": "Columbus",
+                "state": "OH",
+                "zip_code": "43215"
+            },
+            "created_at": "2023-01-28T10:20:00Z"
+        },
+        {
+            "customer_id": 7,
+            "name": "Eve Green",
+            "email": "eveg@example.com",
+            "phone": "555-6789",
+            "address": {
+                "street": "123 Ash St",
+                "city": "Boulder",
+                "state": "CO",
+                "zip_code": "80302"
+            },
+            "created_at": "2023-02-14T16:55:00Z"
+        },
+        {
+            "customer_id": 8,
+            "name": "Frank Blue",
+            "email": "frankb@example.com",
+            "phone": "555-1122",
+            "address": {
+                "street": "456 Cypress St",
+                "city": "Madison",
+                "state": "WI",
+                "zip_code": "53703"
+            },
+            "created_at": "2023-03-10T11:35:00Z"
+        },
+        {
+            "customer_id": 9,
+            "name": "Grace Red",
+            "email": "gracer@example.com",
+            "phone": "555-3344",
+            "address": {
+                "street": "789 Fir St",
+                "city": "Austin",
+                "state": "TX",
+                "zip_code": "73301"
+            },
+            "created_at": "2023-01-07T09:25:00Z"
+        },
+        {
+            "customer_id": 10,
+            "name": "Hank Yellow",
+            "email": "hanky@example.com",
+            "phone": "555-5566",
+            "address": {
+                "street": "321 Spruce St",
+                "city": "Nashville",
+                "state": "TN",
+                "zip_code": "37201"
+            },
+            "created_at": "2023-05-12T13:15:00Z"
+        },
+        {
+            "customer_id": 11,
+            "name": "Ivy Pink",
+            "email": "ivyp@example.com",
+            "phone": "555-7788",
+            "address": {
+                "street": "654 Redwood St",
+                "city": "Seattle",
+                "state": "WA",
+                "zip_code": "98101"
+            },
+            "created_at": "2023-02-25T07:50:00Z"
+        },
+        {
+            "customer_id": 12,
+            "name": "Jack Purple",
+            "email": "jackp@example.com",
+            "phone": "555-9900",
+            "address": {
+                "street": "987 Willow St",
+                "city": "Portland",
+                "state": "OR",
+                "zip_code": "97201"
+            },
+            "created_at": "2023-04-01T14:20:00Z"
+        },
+        {
+            "customer_id": 13,
+            "name": "Kate Brown",
+            "email": "kateb@example.com",
+            "phone": "555-1212",
+            "address": {
+                "street": "123 Poplar St",
+                "city": "Phoenix",
+                "state": "AZ",
+                "zip_code": "85001"
+            },
+            "created_at": "2023-03-20T09:10:00Z"
+        },
+        {
+            "customer_id": 14,
+            "name": "Leo Orange",
+            "email": "leoo@example.com",
+            "phone": "555-3434",
+            "address": {
+                "street": "456 Magnolia St",
+                "city": "Las Vegas",
+                "state": "NV",
+                "zip_code": "89101"
+            },
+            "created_at": "2023-01-18T15:40:00Z"
+        },
+        {
+            "customer_id": 15,
+            "name": "Mona Gold",
+            "email": "monag@example.com",
+            "phone": "555-5656",
+            "address": {
+                "street": "789 Palm St",
+                "city": "San Francisco",
+                "state": "CA",
+                "zip_code": "94101"
+            },
+            "created_at": "2023-04-12T10:05:00Z"
+        },
+        {
+            "customer_id": 16,
+            "name": "Nate Silver",
+            "email": "nates@example.com",
+            "phone": "555-7878",
+            "address": {
+                "street": "321 Bamboo St",
+                "city": "Denver",
+                "state": "CO",
+                "zip_code": "80201"
+            },
+            "created_at": "2023-05-08T12:30:00Z"
+        },
+        {
+            "customer_id": 17,
+            "name": "Olive Lime",
+            "email": "olivel@example.com",
+            "phone": "555-9090",
+            "address": {
+                "street": "654 Chestnut St",
+                "city": "Miami",
+                "state": "FL",
+                "zip_code": "33101"
+            },
+            "created_at": "2023-02-05T14:45:00Z"
+        },
+        {
+            "customer_id": 18,
+            "name": "Paul Teal",
+            "email": "pault@example.com",
+            "phone": "555-2323",
+            "address": {
+                "street": "987 Dogwood St",
+                "city": "Houston",
+                "state": "TX",
+                "zip_code": "77001"
+            },
+            "created_at": "2023-03-28T09:35:00Z"
+        },
+        {
+            "customer_id": 19,
+            "name": "Quincy Indigo",
+            "email": "quincyi@example.com",
+            "phone": "555-4545",
+            "address": {
+                "street": "123 Aspen St",
+                "city": "Atlanta",
+                "state": "GA",
+                "zip_code": "30301"
+            },
+            "created_at": "2023-01-12T11:00:00Z"
+        },
+        {
+            "customer_id": 20,
+            "name": "Rita Violet",
+            "email": "ritav@example.com",
+            "phone": "555-6767",
+            "address": {
+                "street": "456 Hawthorn St",
+                "city": "Boston",
+                "state": "MA",
+                "zip_code": "02101"
+            },
+            "created_at": "2023-04-25T08:55:00Z"
+        }
+    ],
+    "orders": [
+        {
+            "order_id": 101,
+            "customer_id": 1,
+            "order_date": "2023-04-05T13:22:00Z",
+            "status": "Shipped",
+            "total_amount": 150.75,
+            "products": [
+                {
+                    "product_id": 1001,
+                    "quantity": 2,
+                    "price": 45.00
+                },
+                {
+                    "product_id": 1002,
+                    "quantity": 1,
+                    "price": 60.75
+                }
+            ]
+        },
+        {
+            "order_id": 102,
+            "customer_id": 2,
+            "order_date": "2023-05-18T15:45:00Z",
+            "status": "Processing",
+            "total_amount": 99.99,
+            "products": [
+                {
+                    "product_id": 1003,
+                    "quantity": 3,
+                    "price": 33.33
+                }
+            ]
+        },
+        {
+            "order_id": 103,
+            "customer_id": 3,
+            "order_date": "2023-06-22T10:00:00Z",
+            "status": "Delivered",
+            "total_amount": 75.50,
+            "products": [
+                {
+                    "product_id": 1004,
+                    "quantity": 1,
+                    "price": 25.50
+                },
+                {
+                    "product_id": 1005,
+                    "quantity": 2,
+                    "price": 25.00
+                }
+            ]
+        },
+        {
+            "order_id": 104,
+            "customer_id": 4,
+            "order_date": "2023-07-15T12:30:00Z",
+            "status": "Cancelled",
+            "total_amount": 120.00,
+            "products": [
+                {
+                    "product_id": 1006,
+                    "quantity": 4,
+                    "price": 30.00
+                }
+            ]
+        },
+        {
+            "order_id": 105,
+            "customer_id": 5,
+            "order_date": "2023-08-05T16:45:00Z",
+            "status": "Shipped",
+            "total_amount": 180.25,
+            "products": [
+                {
+                    "product_id": 1007,
+                    "quantity": 3,
+                    "price": 60.75
+                }
+            ]
+        },
+        {
+            "order_id": 106,
+            "customer_id": 6,
+            "order_date": "2023-09-12T08:55:00Z",
+            "status": "Processing",
+            "total_amount": 140.00,
+            "products": [
+                {
+                    "product_id": 1008,
+                    "quantity": 2,
+                    "price": 70.00
+                }
+            ]
+        },
+        {
+            "order_id": 107,
+            "customer_id": 7,
+            "order_date": "2023-10-19T14:20:00Z",
+            "status": "Delivered",
+            "total_amount": 99.99,
+            "products": [
+                {
+                    "product_id": 1009,
+                    "quantity": 1,
+                    "price": 99.99
+                }
+            ]
+        },
+        {
+            "order_id": 108,
+            "customer_id": 8,
+            "order_date": "2023-11-05T17:10:00Z",
+            "status": "Shipped",
+            "total_amount": 60.00,
+            "products": [
+                {
+                    "product_id": 1010,
+                    "quantity": 2,
+                    "price": 30.00
+                }
+            ]
+        },
+        {
+            "order_id": 109,
+            "customer_id": 9,
+            "order_date": "2023-12-11T15:00:00Z",
+            "status": "Processing",
+            "total_amount": 200.00,
+            "products": [
+                {
+                    "product_id": 1011,
+                    "quantity": 4,
+                    "price": 50.00
+                }
+            ]
+        },
+        {
+            "order_id": 110,
+            "customer_id": 10,
+            "order_date": "2023-12-25T11:00:00Z",
+            "status": "Cancelled",
+            "total_amount": 50.00,
+            "products": [
+                {
+                    "product_id": 1012,
+                    "quantity": 2,
+                    "price": 25.00
+                }
+            ]
+        },
+        {
+            "order_id": 111,
+            "customer_id": 11,
+            "order_date": "2024-01-03T13:00:00Z",
+            "status": "Shipped",
+            "total_amount": 150.00,
+            "products": [
+                {
+                    "product_id": 1013,
+                    "quantity": 3,
+                    "price": 50.00
+                }
+            ]
+        },
+        {
+            "order_id": 112,
+            "customer_id": 12,
+            "order_date": "2024-01-20T10:30:00Z",
+            "status": "Processing",
+            "total_amount": 99.50,
+            "products": [
+                {
+                    "product_id": 1014,
+                    "quantity": 2,
+                    "price": 49.75
+                }
+            ]
+        },
+        {
+            "order_id": 113,
+            "customer_id": 13,
+            "order_date": "2024-02-14T08:00:00Z",
+            "status": "Delivered",
+            "total_amount": 125.00,
+            "products": [
+                {
+                    "product_id": 1015,
+                    "quantity": 5,
+                    "price": 25.00
+                }
+            ]
+        },
+        {
+            "order_id": 114,
+            "customer_id": 14,
+            "order_date": "2024-03-01T12:15:00Z",
+            "status": "Cancelled",
+            "total_amount": 200.00,
+            "products": [
+                {
+                    "product_id": 1016,
+                    "quantity": 4,
+                    "price": 50.00
+                }
+            ]
+        },
+        {
+            "order_id": 115,
+            "customer_id": 15,
+            "order_date": "2024-03-15T09:45:00Z",
+            "status": "Shipped",
+            "total_amount": 175.75,
+            "products": [
+                {
+                    "product_id": 1017,
+                    "quantity": 3,
+                    "price": 58.58
+                }
+            ]
+        },
+        {
+            "order_id": 116,
+            "customer_id": 16,
+            "order_date": "2024-04-10T14:50:00Z",
+            "status": "Processing",
+            "total_amount": 150.00,
+            "products": [
+                {
+                    "product_id": 1018,
+                    "quantity": 2,
+                    "price": 75.00
+                }
+            ]
+        },
+        {
+            "order_id": 117,
+            "customer_id": 17,
+            "order_date": "2024-04-25T16:20:00Z",
+            "status": "Delivered",
+            "total_amount": 90.00,
+            "products": [
+                {
+                    "product_id": 1019,
+                    "quantity": 3,
+                    "price": 30.00
+                }
+            ]
+        },
+        {
+            "order_id": 118,
+            "customer_id": 18,
+            "order_date": "2024-05-05T12:35:00Z",
+            "status": "Shipped",
+            "total_amount": 120.00,
+            "products": [
+                {
+                    "product_id": 1020,
+                    "quantity": 4,
+                    "price": 30.00
+                }
+            ]
+        },
+        {
+            "order_id": 119,
+            "customer_id": 19,
+            "order_date": "2024-05-18T11:00:00Z",
+            "status": "Processing",
+            "total_amount": 160.00,
+            "products": [
+                {
+                    "product_id": 1021,
+                    "quantity": 2,
+                    "price": 80.00
+                }
+            ]
+        },
+        {
+            "order_id": 120,
+            "customer_id": 20,
+            "order_date": "2024-06-10T09:45:00Z",
+            "status": "Cancelled",
+            "total_amount": 140.00,
+            "products": [
+                {
+                    "product_id": 1022,
+                    "quantity": 2,
+                    "price": 70.00
+                }
+            ]
+        }
+    ],
+    "products": [
+        {
+            "product_id": 1001,
+            "name": "Widget A",
+            "description": "A high-quality widget",
+            "price": 45.00,
+            "stock": 100,
+            "category": "Widgets"
+        },
+        {
+            "product_id": 1002,
+            "name": "Widget B",
+            "description": "An advanced widget",
+            "price": 60.75,
+            "stock": 50,
+            "category": "Widgets"
+        },
+        {
+            "product_id": 1003,
+            "name": "Gadget X",
+            "description": "A versatile gadget",
+            "price": 33.33,
+            "stock": 200,
+            "category": "Gadgets"
+        },
+        {
+            "product_id": 1004,
+            "name": "Tool Z",
+            "description": "A useful tool",
+            "price": 25.50,
+            "stock": 150,
+            "category": "Tools"
+        },
+        {
+            "product_id": 1005,
+            "name": "Device Y",
+            "description": "An essential device",
+            "price": 50.00,
+            "stock": 75,
+            "category": "Devices"
+        },
+        {
+            "product_id": 1006,
+            "name": "Instrument P",
+            "description": "A precise instrument",
+            "price": 30.00,
+            "stock": 120,
+            "category": "Instruments"
+        },
+        {
+            "product_id": 1007,
+            "name": "Machine Q",
+            "description": "A powerful machine",
+            "price": 60.75,
+            "stock": 60,
+            "category": "Machines"
+        },
+        {
+            "product_id": 1008,
+            "name": "Apparatus W",
+            "description": "An advanced apparatus",
+            "price": 70.00,
+            "stock": 80,
+            "category": "Apparatus"
+        },
+        {
+            "product_id": 1009,
+            "name": "Gizmo E",
+            "description": "A versatile gizmo",
+            "price": 99.99,
+            "stock": 90,
+            "category": "Gizmos"
+        },
+        {
+            "product_id": 1010,
+            "name": "Contraption R",
+            "description": "A unique contraption",
+            "price": 30.00,
+            "stock": 110,
+            "category": "Contraptions"
+        },
+        {
+            "product_id": 1011,
+            "name": "Widget C",
+            "description": "A premium widget",
+            "price": 50.00,
+            "stock": 100,
+            "category": "Widgets"
+        },
+        {
+            "product_id": 1012,
+            "name": "Widget D",
+            "description": "An exclusive widget",
+            "price": 25.00,
+            "stock": 130,
+            "category": "Widgets"
+        },
+        {
+            "product_id": 1013,
+            "name": "Gadget Y",
+            "description": "A handy gadget",
+            "price": 50.00,
+            "stock": 70,
+            "category": "Gadgets"
+        },
+        {
+            "product_id": 1014,
+            "name": "Tool X",
+            "description": "A reliable tool",
+            "price": 49.75,
+            "stock": 65,
+            "category": "Tools"
+        },
+        {
+            "product_id": 1015,
+            "name": "Device Z",
+            "description": "A modern device",
+            "price": 25.00,
+            "stock": 90,
+            "category": "Devices"
+        },
+        {
+            "product_id": 1016,
+            "name": "Instrument Q",
+            "description": "A specialized instrument",
+            "price": 50.00,
+            "stock": 95,
+            "category": "Instruments"
+        },
+        {
+            "product_id": 1017,
+            "name": "Machine P",
+            "description": "A compact machine",
+            "price": 58.58,
+            "stock": 50,
+            "category": "Machines"
+        },
+        {
+            "product_id": 1018,
+            "name": "Apparatus Q",
+            "description": "A state-of-the-art apparatus",
+            "price": 75.00,
+            "stock": 55,
+            "category": "Apparatus"
+        },
+        {
+            "product_id": 1019,
+            "name": "Gizmo Z",
+            "description": "A multifunctional gizmo",
+            "price": 30.00,
+            "stock": 85,
+            "category": "Gizmos"
+        },
+        {
+            "product_id": 1020,
+            "name": "Contraption Y",
+            "description": "An innovative contraption",
+            "price": 30.00,
+            "stock": 100,
+            "category": "Contraptions"
+        },
+        {
+            "product_id": 1021,
+            "name": "Widget E",
+            "description": "An economical widget",
+            "price": 80.00,
+            "stock": 40,
+            "category": "Widgets"
+        },
+        {
+            "product_id": 1022,
+            "name": "Gadget Z",
+            "description": "A superior gadget",
+            "price": 70.00,
+            "stock": 30,
+            "category": "Gadgets"
+        }
+    ]
+}
