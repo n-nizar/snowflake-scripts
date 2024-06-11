@@ -23,6 +23,8 @@ GRANT USAGE, CREATE SCHEMA ON DATABASE ma_db_raw TO ROLE ma_dbt_dev;
 GRANT USAGE, CREATE SCHEMA ON DATABASE ma_db_dev TO ROLE ma_dbt_dev;
 GRANT USAGE, CREATE SCHEMA ON DATABASE ma_db_prod TO ROLE ma_dbt_admin;
 
+GRANT USAGE ON INTEGRATION S3_role_integration_bulkloading TO ROLE ma_dbt_dev;
+
 USE ROLE ma_dbt_admin;
 
 -- Create the dbt_audit schema for production environment
@@ -56,16 +58,18 @@ CREATE TABLE IF NOT EXISTS ma_db_dev.dbt_audit.dbt_run (
     PRIMARY KEY (invocation_id, object)
 );
 
--- Here are the steps to create an internal stage and upload data from your desktop.
-CREATE STAGE IF NOT EXISTS ma_db_raw.internal_stage.mac_stage
-directory = (enable = TRUE);
+CREATE SCHEMA IF NOT EXISTS ma_db_raw.source;
 
-DESCRIBE STAGE ma_db_raw.internal_stage.mac_stage;
+-- Create an external stage. Ensure that the storage integration has the privilege to access the S3 bucket.
+-- Replace S3 URL with your specific bucket info.
+CREATE STAGE IF NOT EXISTS ma_db_raw.source.S3_stage
+URL='s3://nnizar-snowflake-stage/bulk-loading/'
+storage_integration = S3_role_integration_bulkloading;
 
-CREATE FILE FORMAT IF NOT EXISTS ma_db_raw.internal_stage.csv type='csv' compression = 'auto' field_delimiter = ',' record_delimiter = '\n' skip_header = 1 field_optionally_enclosed_by = '\042' trim_space = false error_on_column_count_mismatch = false escape = 'none' escape_unenclosed_field = '\134' date_format = 'auto' timestamp_format = 'auto' null_if = ('') comment = 'file format for ingesting csv file to snowflake';
+CREATE FILE FORMAT IF NOT EXISTS ma_db_raw.source.csv type='csv' compression = 'auto' field_delimiter = ',' record_delimiter = '\n' skip_header = 1 field_optionally_enclosed_by = '\042' trim_space = false error_on_column_count_mismatch = false escape = 'none' escape_unenclosed_field = '\134' date_format = 'auto' timestamp_format = 'auto' null_if = ('') comment = 'file format for ingesting csv file to snowflake';
 
 -- Bulk load All columns from a file in a stage
-CREATE TABLE IF NOT EXISTS ma_db_raw.internal_stage.sales (
+CREATE TABLE IF NOT EXISTS ma_db_raw.source.sales (
     ProductID NUMBER,
     Date DATE,
     CustomerID NUMBER,
@@ -88,19 +92,7 @@ CREATE TABLE IF NOT EXISTS ma_db_raw.internal_stage.sales (
     LoadDate DATE
 );
 
--- Load local files to an internal stage using SnowSQL. Modify the file path according to where you have saved the files.
-/*
-PUT file:///Users/helloworld/Downloads/Downloads-Workspace/Data/PowerBI/IncrementalLoad/ @ma_db_raw.internal_stage.mac_stage/csv/sample_data/;
-*/
-
--- Load files from an internal stage to a Snowflake table
-COPY INTO ma_db_raw.internal_stage.sales
-FROM @ma_db_raw.internal_stage.mac_stage/csv/sample_data/
-FILE_FORMAT=ma_db_raw.internal_stage.csv PATTERN = '.*csv.*'
+COPY INTO ma_db_raw.source.sales
+FROM @ma_db_raw.source.S3_stage/modern-analytics/
+FILE_FORMAT=ma_db_raw.source.csv PATTERN = '.*csv.*'
 ON_ERROR = 'skip_file';
-
--- After loading data from stage to Snowflake table, remove it from the Stage
-REMOVE @ma_db_raw.internal_stage.mac_stage/csv/sample_data/;
-
--- Confirm that the file has been removed
-LIST @ma_db_raw.internal_stage.mac_stage;
