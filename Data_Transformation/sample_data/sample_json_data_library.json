@@ -1,0 +1,669 @@
+{
+    "library_data": [
+        {
+            "object": "books",
+            "data": [
+                {
+                    "book_id": 1,
+                    "title": "The Great Gatsby",
+                    "genre": "Fiction",
+                    "author_id": 101,
+                    "published_date": "1925-04-10",
+                    "isbn": "9780743273565",
+                    "availability": "Available"
+                },
+                {
+                    "book_id": 2,
+                    "title": "1984",
+                    "genre": "Dystopian",
+                    "author_id": 102,
+                    "published_date": "1949-06-08",
+                    "isbn": "9780451524935",
+                    "availability": "Checked Out"
+                },
+                {
+                    "book_id": 3,
+                    "title": "To Kill a Mockingbird",
+                    "genre": "Fiction",
+                    "author_id": 103,
+                    "published_date": "1960-07-11",
+                    "isbn": "9780061120084",
+                    "availability": "Available"
+                },
+                {
+                    "book_id": 4,
+                    "title": "Brave New World",
+                    "genre": "Science Fiction",
+                    "author_id": 104,
+                    "published_date": "1932-08-31",
+                    "isbn": "9780060850524",
+                    "availability": "Checked Out"
+                },
+                {
+                    "book_id": 5,
+                    "title": "The Catcher in the Rye",
+                    "genre": "Fiction",
+                    "author_id": 105,
+                    "published_date": "1951-07-16",
+                    "isbn": "9780316769488",
+                    "availability": "Available"
+                },
+                {
+                    "book_id": 6,
+                    "title": "Moby Dick",
+                    "genre": "Fiction",
+                    "author_id": 106,
+                    "published_date": "1851-10-18",
+                    "isbn": "9780142437247",
+                    "availability": "Available"
+                },
+                {
+                    "book_id": 7,
+                    "title": "War and Peace",
+                    "genre": "Historical Fiction",
+                    "author_id": 107,
+                    "published_date": "1869-01-01",
+                    "isbn": "9781400079988",
+                    "availability": "Checked Out"
+                },
+                {
+                    "book_id": 8,
+                    "title": "Pride and Prejudice",
+                    "genre": "Romance",
+                    "author_id": 108,
+                    "published_date": "1813-01-28",
+                    "isbn": "9781503290563",
+                    "availability": "Available"
+                },
+                {
+                    "book_id": 9,
+                    "title": "The Hobbit",
+                    "genre": "Fantasy",
+                    "author_id": 109,
+                    "published_date": "1937-09-21",
+                    "isbn": "9780547928227",
+                    "availability": "Available"
+                },
+                {
+                    "book_id": 10,
+                    "title": "The Lord of the Rings",
+                    "genre": "Fantasy",
+                    "author_id": 109,
+                    "published_date": "1954-07-29",
+                    "isbn": "9780618640157",
+                    "availability": "Checked Out"
+                },
+                {
+                    "book_id": 11,
+                    "title": "Animal Farm",
+                    "genre": "Political Satire",
+                    "author_id": 102,
+                    "published_date": "1945-08-17",
+                    "isbn": "9780451526342",
+                    "availability": "Available"
+                },
+                {
+                    "book_id": 12,
+                    "title": "The Grapes of Wrath",
+                    "genre": "Fiction",
+                    "author_id": 110,
+                    "published_date": "1939-04-14",
+                    "isbn": "9780143039433",
+                    "availability": "Checked Out"
+                },
+                {
+                    "book_id": 13,
+                    "title": "Ulysses",
+                    "genre": "Modernist Fiction",
+                    "author_id": 111,
+                    "published_date": "1922-02-02",
+                    "isbn": "9780199535675",
+                    "availability": "Available"
+                },
+                {
+                    "book_id": 14,
+                    "title": "Madame Bovary",
+                    "genre": "Fiction",
+                    "author_id": 112,
+                    "published_date": "1856-12-15",
+                    "isbn": "9780140449129",
+                    "availability": "Available"
+                },
+                {
+                    "book_id": 15,
+                    "title": "The Odyssey",
+                    "genre": "Epic Poetry",
+                    "author_id": 113,
+                    "published_date": "-700-01-01",
+                    "isbn": "9780140268867",
+                    "availability": "Checked Out"
+                },
+                {
+                    "book_id": 16,
+                    "title": "Crime and Punishment",
+                    "genre": "Philosophical Fiction",
+                    "author_id": 114,
+                    "published_date": "1866-01-01",
+                    "isbn": "9780486415871",
+                    "availability": "Available"
+                },
+                {
+                    "book_id": 17,
+                    "title": "One Hundred Years of Solitude",
+                    "genre": "Magic Realism",
+                    "author_id": 115,
+                    "published_date": "1967-05-30",
+                    "isbn": "9780060883287",
+                    "availability": "Available"
+                },
+                {
+                    "book_id": 18,
+                    "title": "The Divine Comedy",
+                    "genre": "Epic Poetry",
+                    "author_id": 116,
+                    "published_date": "1320-01-01",
+                    "isbn": "9780142437223",
+                    "availability": "Checked Out"
+                },
+                {
+                    "book_id": 19,
+                    "title": "The Brothers Karamazov",
+                    "genre": "Philosophical Fiction",
+                    "author_id": 114,
+                    "published_date": "1880-11-01",
+                    "isbn": "9780374528379",
+                    "availability": "Available"
+                },
+                {
+                    "book_id": 20,
+                    "title": "The Iliad",
+                    "genre": "Epic Poetry",
+                    "author_id": 113,
+                    "published_date": "-750-01-01",
+                    "isbn": "9780140275360",
+                    "availability": "Available"
+                }
+            ]
+        },
+        {
+            "object": "authors",
+            "data": [
+                {
+                    "author_id": 101,
+                    "name": "F. Scott Fitzgerald",
+                    "nationality": "American",
+                    "birth_date": "1896-09-24",
+                    "death_date": "1940-12-21"
+                },
+                {
+                    "author_id": 102,
+                    "name": "George Orwell",
+                    "nationality": "British",
+                    "birth_date": "1903-06-25",
+                    "death_date": "1950-01-21"
+                },
+                {
+                    "author_id": 103,
+                    "name": "Harper Lee",
+                    "nationality": "American",
+                    "birth_date": "1926-04-28",
+                    "death_date": "2016-02-19"
+                },
+                {
+                    "author_id": 104,
+                    "name": "Aldous Huxley",
+                    "nationality": "British",
+                    "birth_date": "1894-07-26",
+                    "death_date": "1963-11-22"
+                },
+                {
+                    "author_id": 105,
+                    "name": "J.D. Salinger",
+                    "nationality": "American",
+                    "birth_date": "1919-01-01",
+                    "death_date": "2010-01-27"
+                },
+                {
+                    "author_id": 106,
+                    "name": "Herman Melville",
+                    "nationality": "American",
+                    "birth_date": "1819-08-01",
+                    "death_date": "1891-09-28"
+                },
+                {
+                    "author_id": 107,
+                    "name": "Leo Tolstoy",
+                    "nationality": "Russian",
+                    "birth_date": "1828-09-09",
+                    "death_date": "1910-11-20"
+                },
+                {
+                    "author_id": 108,
+                    "name": "Jane Austen",
+                    "nationality": "British",
+                    "birth_date": "1775-12-16",
+                    "death_date": "1817-07-18"
+                },
+                {
+                    "author_id": 109,
+                    "name": "J.R.R. Tolkien",
+                    "nationality": "British",
+                    "birth_date": "1892-01-03",
+                    "death_date": "1973-09-02"
+                },
+                {
+                    "author_id": 110,
+                    "name": "John Steinbeck",
+                    "nationality": "American",
+                    "birth_date": "1902-02-27",
+                    "death_date": "1968-12-20"
+                }
+            ]
+        },
+        {
+            "object": "members",
+            "data": [
+                {
+                    "member_id": 1,
+                    "name": "Alice Green",
+                    "membership_start_date": "2020-01-15",
+                    "email": "alice.green@example.com",
+                    "phone": "555-1234",
+                    "address": "123 Elm Street, Springfield"
+                },
+                {
+                    "member_id": 2,
+                    "name": "Bob Brown",
+                    "membership_start_date": "2019-03-22",
+                    "email": "bob.brown@example.com",
+                    "phone": "555-5678",
+                    "address": "456 Oak Street, Springfield"
+                },
+                {
+                    "member_id": 3,
+                    "name": "Charlie Davis",
+                    "membership_start_date": "2021-07-08",
+                    "email": "charlie.davis@example.com",
+                    "phone": "555-8765",
+                    "address": "789 Maple Street, Springfield"
+                },
+                {
+                    "member_id": 4,
+                    "name": "Dana Lee",
+                    "membership_start_date": "2018-11-30",
+                    "email": "dana.lee@example.com",
+                    "phone": "555-4321",
+                    "address": "321 Birch Street, Springfield"
+                },
+                {
+                    "member_id": 5,
+                    "name": "Eve Martinez",
+                    "membership_start_date": "2017-05-14",
+                    "email": "eve.martinez@example.com",
+                    "phone": "555-6789",
+                    "address": "654 Pine Street, Springfield"
+                },
+                {
+                    "member_id": 6,
+                    "name": "Frank Thomas",
+                    "membership_start_date": "2020-06-20",
+                    "email": "frank.thomas@example.com",
+                    "phone": "555-3456",
+                    "address": "345 Cedar Street, Springfield"
+                },
+                {
+                    "member_id": 7,
+                    "name": "Grace Hall",
+                    "membership_start_date": "2019-09-10",
+                    "email": "grace.hall@example.com",
+                    "phone": "555-7890",
+                    "address": "678 Walnut Street, Springfield"
+                },
+                {
+                    "member_id": 8,
+                    "name": "Henry Scott",
+                    "membership_start_date": "2018-05-15",
+                    "email": "henry.scott@example.com",
+                    "phone": "555-2345",
+                    "address": "234 Birch Street, Springfield"
+                },
+                {
+                    "member_id": 9,
+                    "name": "Isla Walker",
+                    "membership_start_date": "2017-12-12",
+                    "email": "isla.walker@example.com",
+                    "phone": "555-6780",
+                    "address": "567 Maple Street, Springfield"
+                },
+                {
+                    "member_id": 10,
+                    "name": "Jack White",
+                    "membership_start_date": "2021-03-08",
+                    "email": "jack.white@example.com",
+                    "phone": "555-8901",
+                    "address": "890 Pine Street, Springfield"
+                },
+                {
+                    "member_id": 11,
+                    "name": "Karen Black",
+                    "membership_start_date": "2020-08-23",
+                    "email": "karen.black@example.com",
+                    "phone": "555-1235",
+                    "address": "123 Maple Street, Springfield"
+                },
+                {
+                    "member_id": 12,
+                    "name": "Liam Johnson",
+                    "membership_start_date": "2019-11-19",
+                    "email": "liam.johnson@example.com",
+                    "phone": "555-2346",
+                    "address": "234 Elm Street, Springfield"
+                },
+                {
+                    "member_id": 13,
+                    "name": "Mia Brown",
+                    "membership_start_date": "2018-07-24",
+                    "email": "mia.brown@example.com",
+                    "phone": "555-3457",
+                    "address": "345 Oak Street, Springfield"
+                },
+                {
+                    "member_id": 14,
+                    "name": "Noah Williams",
+                    "membership_start_date": "2017-10-02",
+                    "email": "noah.williams@example.com",
+                    "phone": "555-4568",
+                    "address": "456 Pine Street, Springfield"
+                },
+                {
+                    "member_id": 15,
+                    "name": "Olivia Martinez",
+                    "membership_start_date": "2021-02-18",
+                    "email": "olivia.martinez@example.com",
+                    "phone": "555-5679",
+                    "address": "567 Elm Street, Springfield"
+                },
+                {
+                    "member_id": 16,
+                    "name": "Paul Davis",
+                    "membership_start_date": "2020-05-29",
+                    "email": "paul.davis@example.com",
+                    "phone": "555-6781",
+                    "address": "678 Oak Street, Springfield"
+                },
+                {
+                    "member_id": 17,
+                    "name": "Quincy Robinson",
+                    "membership_start_date": "2019-08-06",
+                    "email": "quincy.robinson@example.com",
+                    "phone": "555-7892",
+                    "address": "789 Maple Street, Springfield"
+                },
+                {
+                    "member_id": 18,
+                    "name": "Rachel Lee",
+                    "membership_start_date": "2018-03-21",
+                    "email": "rachel.lee@example.com",
+                    "phone": "555-8903",
+                    "address": "890 Cedar Street, Springfield"
+                },
+                {
+                    "member_id": 19,
+                    "name": "Samuel Young",
+                    "membership_start_date": "2017-06-15",
+                    "email": "samuel.young@example.com",
+                    "phone": "555-1236",
+                    "address": "123 Walnut Street, Springfield"
+                },
+                {
+                    "member_id": 20,
+                    "name": "Tina Allen",
+                    "membership_start_date": "2021-01-27",
+                    "email": "tina.allen@example.com",
+                    "phone": "555-2347",
+                    "address": "234 Birch Street, Springfield"
+                },
+                {
+                    "member_id": 21,
+                    "name": "Uma Hernandez",
+                    "membership_start_date": "2020-04-14",
+                    "email": "uma.hernandez@example.com",
+                    "phone": "555-3458",
+                    "address": "345 Elm Street, Springfield"
+                },
+                {
+                    "member_id": 22,
+                    "name": "Victor King",
+                    "membership_start_date": "2019-07-09",
+                    "email": "victor.king@example.com",
+                    "phone": "555-4569",
+                    "address": "456 Oak Street, Springfield"
+                },
+                {
+                    "member_id": 23,
+                    "name": "Wendy Scott",
+                    "membership_start_date": "2018-12-31",
+                    "email": "wendy.scott@example.com",
+                    "phone": "555-5670",
+                    "address": "567 Pine Street, Springfield"
+                },
+                {
+                    "member_id": 24,
+                    "name": "Xavier Thomas",
+                    "membership_start_date": "2017-09-14",
+                    "email": "xavier.thomas@example.com",
+                    "phone": "555-6782",
+                    "address": "678 Elm Street, Springfield"
+                },
+                {
+                    "member_id": 25,
+                    "name": "Yara White",
+                    "membership_start_date": "2021-04-12",
+                    "email": "yara.white@example.com",
+                    "phone": "555-7893",
+                    "address": "789 Oak Street, Springfield"
+                },
+                {
+                    "member_id": 26,
+                    "name": "Zachary Wilson",
+                    "membership_start_date": "2020-02-21",
+                    "email": "zachary.wilson@example.com",
+                    "phone": "555-8904",
+                    "address": "890 Birch Street, Springfield"
+                },
+                {
+                    "member_id": 27,
+                    "name": "Amy Brown",
+                    "membership_start_date": "2019-06-18",
+                    "email": "amy.brown@example.com",
+                    "phone": "555-1237",
+                    "address": "123 Pine Street, Springfield"
+                },
+                {
+                    "member_id": 28,
+                    "name": "Ben Clark",
+                    "membership_start_date": "2018-11-05",
+                    "email": "ben.clark@example.com",
+                    "phone": "555-2348",
+                    "address": "234 Elm Street, Springfield"
+                },
+                {
+                    "member_id": 29,
+                    "name": "Clara Davis",
+                    "membership_start_date": "2017-08-22",
+                    "email": "clara.davis@example.com",
+                    "phone": "555-3459",
+                    "address": "345 Oak Street, Springfield"
+                },
+                {
+                    "member_id": 30,
+                    "name": "Daniel Evans",
+                    "membership_start_date": "2021-03-03",
+                    "email": "daniel.evans@example.com",
+                    "phone": "555-4561",
+                    "address": "456 Pine Street, Springfield"
+                },
+                {
+                    "member_id": 31,
+                    "name": "Emma Green",
+                    "membership_start_date": "2020-07-27",
+                    "email": "emma.green@example.com",
+                    "phone": "555-5672",
+                    "address": "567 Elm Street, Springfield"
+                },
+                {
+                    "member_id": 32,
+                    "name": "Frank Hill",
+                    "membership_start_date": "2019-10-15",
+                    "email": "frank.hill@example.com",
+                    "phone": "555-6783",
+                    "address": "678 Oak Street, Springfield"
+                },
+                {
+                    "member_id": 33,
+                    "name": "Gina Ivey",
+                    "membership_start_date": "2018-05-02",
+                    "email": "gina.ivey@example.com",
+                    "phone": "555-7894",
+                    "address": "789 Maple Street, Springfield"
+                },
+                {
+                    "member_id": 34,
+                    "name": "Hank Jones",
+                    "membership_start_date": "2017-07-25",
+                    "email": "hank.jones@example.com",
+                    "phone": "555-8905",
+                    "address": "890 Pine Street, Springfield"
+                },
+                {
+                    "member_id": 35,
+                    "name": "Ivy Kelly",
+                    "membership_start_date": "2021-06-14",
+                    "email": "ivy.kelly@example.com",
+                    "phone": "555-1238",
+                    "address": "123 Birch Street, Springfield"
+                },
+                {
+                    "member_id": 36,
+                    "name": "Jackie Lewis",
+                    "membership_start_date": "2020-05-01",
+                    "email": "jackie.lewis@example.com",
+                    "phone": "555-2349",
+                    "address": "234 Pine Street, Springfield"
+                },
+                {
+                    "member_id": 37,
+                    "name": "Kelly Moore",
+                    "membership_start_date": "2019-08-17",
+                    "email": "kelly.moore@example.com",
+                    "phone": "555-3451",
+                    "address": "345 Elm Street, Springfield"
+                },
+                {
+                    "member_id": 38,
+                    "name": "Larry Nelson",
+                    "membership_start_date": "2018-01-29",
+                    "email": "larry.nelson@example.com",
+                    "phone": "555-4562",
+                    "address": "456 Oak Street, Springfield"
+                },
+                {
+                    "member_id": 39,
+                    "name": "Mona Owens",
+                    "membership_start_date": "2017-04-16",
+                    "email": "mona.owens@example.com",
+                    "phone": "555-5673",
+                    "address": "567 Pine Street, Springfield"
+                },
+                {
+                    "member_id": 40,
+                    "name": "Nina Parker",
+                    "membership_start_date": "2021-08-22",
+                    "email": "nina.parker@example.com",
+                    "phone": "555-6784",
+                    "address": "678 Elm Street, Springfield"
+                },
+                {
+                    "member_id": 41,
+                    "name": "Oscar Quinn",
+                    "membership_start_date": "2020-09-11",
+                    "email": "oscar.quinn@example.com",
+                    "phone": "555-7895",
+                    "address": "789 Oak Street, Springfield"
+                },
+                {
+                    "member_id": 42,
+                    "name": "Penny Richards",
+                    "membership_start_date": "2019-03-06",
+                    "email": "penny.richards@example.com",
+                    "phone": "555-8906",
+                    "address": "890 Birch Street, Springfield"
+                },
+                {
+                    "member_id": 43,
+                    "name": "Quinn Saunders",
+                    "membership_start_date": "2018-10-13",
+                    "email": "quinn.saunders@example.com",
+                    "phone": "555-1239",
+                    "address": "123 Pine Street, Springfield"
+                },
+                {
+                    "member_id": 44,
+                    "name": "Raymond Taylor",
+                    "membership_start_date": "2017-11-07",
+                    "email": "raymond.taylor@example.com",
+                    "phone": "555-2340",
+                    "address": "234 Elm Street, Springfield"
+                },
+                {
+                    "member_id": 45,
+                    "name": "Samantha Upton",
+                    "membership_start_date": "2021-07-19",
+                    "email": "samantha.upton@example.com",
+                    "phone": "555-3452",
+                    "address": "345 Oak Street, Springfield"
+                },
+                {
+                    "member_id": 46,
+                    "name": "Timothy Vaughan",
+                    "membership_start_date": "2020-06-08",
+                    "email": "timothy.vaughan@example.com",
+                    "phone": "555-4563",
+                    "address": "456 Pine Street, Springfield"
+                },
+                {
+                    "member_id": 47,
+                    "name": "Ursula White",
+                    "membership_start_date": "2019-12-26",
+                    "email": "ursula.white@example.com",
+                    "phone": "555-5674",
+                    "address": "567 Elm Street, Springfield"
+                },
+                {
+                    "member_id": 48,
+                    "name": "Victor Xander",
+                    "membership_start_date": "2018-02-14",
+                    "email": "victor.xander@example.com",
+                    "phone": "555-6785",
+                    "address": "678 Oak Street, Springfield"
+                },
+                {
+                    "member_id": 49,
+                    "name": "Wanda Young",
+                    "membership_start_date": "2017-09-03",
+                    "email": "wanda.young@example.com",
+                    "phone": "555-7896",
+                    "address": "789 Birch Street, Springfield"
+                },
+                {
+                    "member_id": 50,
+                    "name": "Xander Zimmerman",
+                    "membership_start_date": "2021-05-22",
+                    "email": "xander.zimmerman@example.com",
+                    "phone": "555-8907",
+                    "address": "890 Pine Street, Springfield"
+                }
+            ]
+        }
+    ]
+}
