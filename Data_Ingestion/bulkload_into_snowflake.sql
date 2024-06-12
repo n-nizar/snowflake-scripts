@@ -1,56 +1,84 @@
-USE ROLE accountadmin;
+-- Step 1: Initial setup with ACCOUNTADMIN role
+USE ROLE ACCOUNTADMIN;
 
-CREATE WAREHOUSE IF NOT EXISTS load_wh WITH warehouse_size='x-small';
+-- Create warehouse and database
+CREATE WAREHOUSE IF NOT EXISTS load_wh
+WITH warehouse_size = 'x-small';
+
 CREATE DATABASE IF NOT EXISTS data_ingestion;
 
--- Replace "nnizar" with your specific Snowflake username.
+-- Create roles
 -- Optional: the "nnsuperadmin" role is used to manage all of my key data projects.
 CREATE ROLE IF NOT EXISTS nnsuperadmin;
-GRANT ROLE nnsuperadmin TO USER nnizar;
 CREATE ROLE IF NOT EXISTS bulk_load_s3;
 CREATE ROLE IF NOT EXISTS bulk_load_int;
-GRANT ROLE bulk_load_s3 TO ROLE nnsuperadmin;
-GRANT ROLE bulk_load_s3 TO ROLE nnsuperadmin;
 
+-- Grant roles to user
+-- Replace "nnizar" with your specific Snowflake username.
+GRANT ROLE nnsuperadmin TO USER nnizar;
 GRANT ROLE bulk_load_s3 TO USER nnizar;
 GRANT ROLE bulk_load_int TO USER nnizar;
 
+-- Grant roles to nnsuperadmin role
+GRANT ROLE bulk_load_s3 TO ROLE nnsuperadmin;
+GRANT ROLE bulk_load_int TO ROLE nnsuperadmin;
+
+-- Grant permissions to roles
 GRANT USAGE ON WAREHOUSE load_wh TO ROLE bulk_load_s3;
 GRANT USAGE, CREATE SCHEMA ON DATABASE data_ingestion TO ROLE bulk_load_s3;
 GRANT USAGE ON WAREHOUSE load_wh TO ROLE bulk_load_int;
 GRANT USAGE, CREATE SCHEMA ON DATABASE data_ingestion TO ROLE bulk_load_int;
 
--- Integrate IAM user with Snowflake storage. Replace "storeage_aws_role_arn" with the ARN of the role that has access to the S3 bucket.
+-- Set up storage integration for S3
+-- Replace "STORAGE_AWS_ROLE_ARN" with the ARN of the role that has access to the S3 bucket.
 CREATE STORAGE INTEGRATION IF NOT EXISTS S3_role_integration_bulkloading
   TYPE = EXTERNAL_STAGE
   STORAGE_PROVIDER = S3
   ENABLED = TRUE
-  STORAGE_AWS_ROLE_ARN = "arn:aws:iam::<aws_account_number>:role/snowflake_bulkloading_access"
-  STORAGE_ALLOWED_LOCATIONS = ("s3://nnizar-snowflake-stage/bulk-loading/");
+  STORAGE_AWS_ROLE_ARN = 'arn:aws:iam::<aws_account_number>:role/snowflake_bulkloading_access'
+  STORAGE_ALLOWED_LOCATIONS = ('s3://nnizar-snowflake-stage/bulk-loading/');
 
 -- Update the IAM role trust relationship with values: STORAGE_AWS_IAM_USER_ARN and STORAGE_AWS_EXTERNAL_ID
 DESCRIBE INTEGRATION S3_role_integration_bulkloading;
 
 GRANT USAGE ON INTEGRATION S3_role_integration_bulkloading TO ROLE bulk_load_s3;
 
-USE WAREHOUSE load_wh;
+-- Step 2: Use more specific roles for regular operations
+-- Use warehouse and bulk load role
 USE ROLE bulk_load_s3;
+USE WAREHOUSE load_wh;
 
-CREATE SCHEMA  IF NOT EXISTS data_ingestion.bulk_load;
+-- Create schema for bulk load
+CREATE SCHEMA IF NOT EXISTS data_ingestion.bulk_load;
 
--- Create an external stage using the storage integration object created during the previous step.
+-- Create an external stage using the storage integration
 -- Replace S3 URL with your specific bucket info.
-CREATE STAGE IF NOT EXISTS data_ingestion.bulk_load.S3stage_bulkload 
-URL='s3://nnizar-snowflake-stage/bulk-loading/'
-storage_integration = S3_role_integration_bulkloading;
+CREATE STAGE IF NOT EXISTS data_ingestion.bulk_load.S3stage_bulkload
+  URL = 's3://nnizar-snowflake-stage/bulk-loading/'
+  STORAGE_INTEGRATION = S3_role_integration_bulkloading;
 
 DESCRIBE STAGE data_ingestion.bulk_load.S3stage_bulkload;
 
-CREATE FILE FORMAT IF NOT EXISTS data_ingestion.bulk_load.csv type='csv' compression = 'auto' field_delimiter = ',' record_delimiter = '\n' skip_header = 1 field_optionally_enclosed_by = '\042' trim_space = false error_on_column_count_mismatch = false escape = 'none' escape_unenclosed_field = '\134' date_format = 'auto' timestamp_format = 'auto' null_if = ('') comment = 'file format for ingesting csv file to snowflake';
+-- Define file format for CSV
+CREATE FILE FORMAT IF NOT EXISTS data_ingestion.bulk_load.csv 
+  TYPE = 'csv' 
+  COMPRESSION = 'auto'
+  FIELD_DELIMITER = ',' 
+  RECORD_DELIMITER = '\n' 
+  SKIP_HEADER = 1 
+  FIELD_OPTIONALLY_ENCLOSED_BY = '\042' 
+  TRIM_SPACE = FALSE 
+  ERROR_ON_COLUMN_COUNT_MISMATCH = FALSE 
+  ESCAPE = 'none' 
+  ESCAPE_UNENCLOSED_FIELD = '\134' 
+  DATE_FORMAT = 'auto' 
+  TIMESTAMP_FORMAT = 'auto' 
+  NULL_IF = ('') 
+  COMMENT = 'file format for ingesting csv file to Snowflake';
 
-GRANT USAGE ON FILE FORMAT DATA_INGESTION.BULK_LOAD.CSV TO ROLE bulk_load_int;
+GRANT USAGE ON FILE FORMAT data_ingestion.bulk_load.csv TO ROLE bulk_load_int;
 
--- Bulk load All columns from a file in a stage
+-- Create and load tables
 CREATE TABLE IF NOT EXISTS data_ingestion.bulk_load.sales_s3 (
     ProductID NUMBER,
     Date DATE,
@@ -75,36 +103,35 @@ CREATE TABLE IF NOT EXISTS data_ingestion.bulk_load.sales_s3 (
 
 COPY INTO data_ingestion.bulk_load.sales_s3
 FROM @data_ingestion.bulk_load.S3stage_bulkload/demo/
-FILE_FORMAT=ma_db_raw.source.csv PATTERN = '.*csv.*'
+FILE_FORMAT = (FORMAT_NAME = data_ingestion.bulk_load.csv)
+PATTERN = '.*csv.*'
 ON_ERROR = 'skip_file';
 
--- Bulk load selected columns from a file in a stage
+-- Create and load a simplified table
 CREATE TABLE IF NOT EXISTS data_ingestion.bulk_load.sales_s3_v2 (
     ProductID NUMBER,
     CampaignID NUMBER,
     ManufacturerID NUMBER
 );
 
-COPY INTO data_ingestion.bulk_load.sales_s3_v2(ProductID, CampaignID, ManufacturerID)
+COPY INTO data_ingestion.bulk_load.sales_s3_v2 (ProductID, CampaignID, ManufacturerID)
 FROM (SELECT DISTINCT t.$1, t.$4, t.$9 FROM @data_ingestion.bulk_load.S3stage_bulkload/demo/ t)
-FILE_FORMAT=ma_db_raw.source.csv PATTERN = '.*csv.*'
+FILE_FORMAT = (FORMAT_NAME = data_ingestion.bulk_load.csv)
+PATTERN = '.*csv.*'
 ON_ERROR = 'skip_file';
 
+-- Switch to internal bulk load role
 USE ROLE bulk_load_int;
 
--- Create an internal stage
+-- Create and manage internal stage
 CREATE STAGE IF NOT EXISTS data_ingestion.bulk_load.intstage_bulkload;
-
 DESCRIBE STAGE data_ingestion.bulk_load.intstage_bulkload;
 
-ALTER STAGE
-data_ingestion.bulk_load.intstage_bulkload
-SET directory = (enable = TRUE);
+-- Enable directory listing and refresh stage
+ALTER STAGE data_ingestion.bulk_load.intstage_bulkload SET directory = (enable = TRUE);
+ALTER STAGE data_ingestion.bulk_load.intstage_bulkload REFRESH;
 
-ALTER STAGE
-data_ingestion.bulk_load.intstage_bulkload refresh;
-
--- Bulk load All columns from a file in a stage
+-- Create table for internal bulk load
 CREATE TABLE IF NOT EXISTS data_ingestion.bulk_load.sales_int (
     ProductID NUMBER,
     Date DATE,
@@ -127,23 +154,25 @@ CREATE TABLE IF NOT EXISTS data_ingestion.bulk_load.sales_int (
     Country VARCHAR
 );
 
-SHOW GRANTS ON STAGE DATA_INGESTION.BULK_LOAD.INTSTAGE_BULKLOAD;
+-- Show grants on internal stage to verify permissions
+SHOW GRANTS ON STAGE data_ingestion.bulk_load.intstage_bulkload;
 
+-- Grant ownership of internal stage to internal bulk load role
 GRANT OWNERSHIP ON STAGE data_ingestion.bulk_load.intstage_bulkload TO ROLE bulk_load_int;
 
--- Load local files to an internal stage using SnowSQL. Modify the file path according to where you have saved the files.
-/*
-PUT file:///Users/helloworld/Downloads/Downloads-Workspace/Data/ @data_ingestion.bulk_load.intstage_bulkload/csv/sample_date/;
-*/
+-- Load local files to internal stage using SnowSQL
+-- Uncomment and modify the file path according to your local setup
+-- PUT file:///Users/helloworld/Downloads/Downloads-Workspace/Data/ @data_ingestion.bulk_load.intstage_bulkload/csv/sample_date/;
 
--- Load files from an internal stage to a Snowflake table.
+-- Load files from internal stage to Snowflake table
 COPY INTO data_ingestion.bulk_load.sales_int
 FROM @data_ingestion.bulk_load.intstage_bulkload
-FILE_FORMAT=DATA_INGESTION.BULK_LOAD.CSV PATTERN = '.*csv.*'
+FILE_FORMAT = (FORMAT_NAME = data_ingestion.bulk_load.csv)
+PATTERN = '.*csv.*'
 ON_ERROR = 'skip_file';
 
--- After loading data from stage to Snowflake table, remove it from the Stage
+-- Remove files from internal stage after loading
 REMOVE @data_ingestion.bulk_load.intstage_bulkload/csv/sample_date/;
 
--- Confirm that the file has been removed
+-- Confirm removal of files from internal stage
 LIST @data_ingestion.bulk_load.intstage_bulkload;
