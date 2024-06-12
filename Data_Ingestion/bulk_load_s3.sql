@@ -1,4 +1,4 @@
--- Refer to Security_and_Access_Control/bulkload_s3.sql for the initial setup.
+-- Refer to Security_and_Access_Control/setup_bulk_load_s3.sql for the initial setup.
 -- Use warehouse and bulk load role
 USE ROLE bulk_load_s3;
 USE WAREHOUSE load_wh;

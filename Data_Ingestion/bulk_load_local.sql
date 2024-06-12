@@ -1,4 +1,4 @@
--- Refer to Security_and_Access_Control/bulkload_local.sql for the initial setup.
+-- Refer to Security_and_Access_Control/setup_bulk_load_local.sql for the initial setup.
 -- Use warehouse and bulk load role
 USE ROLE bulk_load_int;
 USE WAREHOUSE load_wh;
